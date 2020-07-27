@@ -12,9 +12,20 @@ routes.post('/tasks', task.create)
 //Gets
 //User Gets
 routes.get('/users', user.findAll)
-routes.get('/users/:id', user.findOne)
+routes.get('/users/:email', user.findOne)
 //Task Gets
 routes.get('/tasks', task.findAll)
 routes.get('/tasks/:id', task.findOne)
 
+//Put
+//User Put
+routes.put('/users/:email', user.updateByEmail)
+
+//Delete
+//Delete User
+routes.delete('/users/:email', user.deleteByEmail)
+
+//Patch
+//Patch User password
+routes.patch('/users/:email', user.pathPassword)
 module.exports = routes
